@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antera Fusion</title>
+  <style>
+    /* Global Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+      transition: all 0.4s ease;
+      overflow-x: hidden;
+    }
+    body.dark {
+      background: #111;
+      color: #eee;
+    }
+
+    /* Header */
+    header {
+      background: #000000;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+    header img {
+      max-width: 90px;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 1s ease forwards;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #fff;
+      color: #000000;
+      border: 2px solid #000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      border-radius: 6px;
+    }
+    .btn:hover {
+      background: #2b2929;
+      color: #fff;
+    }
+    body.dark .btn {
+      background: #111;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+    body.dark .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* Toggle */
+    .toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      background: #ffffff;
+      color: #000;
+      border: 1px solid #000;
+      transition: all 0.3s ease;
+    }
+    body.dark .toggle {
+      background: #111;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      text-transform: uppercase;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #d4d3d3;
+      border: 1px solid #300569;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s, background 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    body.dark .card {
+      background: #181515;
+      border: 1px solid #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #131212;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      transition: all 0.4s;
+    }
+    body.dark footer {
+      background: #111;
+      color: #aaa;
+    }
+    footer a {
+      color: inherit;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .btn { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <button class="toggle" onclick="toggleMode()">☀ / 🌙</button>
+    <img src="logo.png.jpg" alt="Antera Fusion logo">
+    <h1>ANTERA FUSION</h1>
+    <p>india's first fusion hub to Refine. Build. Accelerate. Invest.</p>
+    <a href="#apply" class="btn">Apply Now</a>
+  </header>
+
+  <!-- How It Works -->
+  <section>
+    <h2>How Antera Fusion Works?</h2>
+    <div class="grid">
+      <div class="card">💡 Have an idea? → We refine & redefine it</div>
+      <div class="card">🛠 Have skills? → Work with startups on equity exchange</div>
+      <div class="card">📚 Want to learn? → Internships & training</div>
+      <div class="card">🚀 Startup already? → Get accelerator support</div>
+      <div class="card">🏢 We build startups too → Invest or acquire fully built ventures</div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section>
+    <h2>Our Programs</h2>
+    <div class="grid">
+      <div class="card"><strong>A.</strong> Founder Programs</div>
+      <div class="card"><strong>B.</strong> Skill & Equity Exchange</div>
+      <div class="card"><strong>C.</strong> Internship & Learning</div>
+      <div class="card"><strong>D.</strong> Accelerator & Studio</div>
+    </div>
+  </section>
+
+  <!-- Why Choose -->
+  <section>
+    <h2>Why Antera Fusion?</h2>
+    <ul style="list-style:none;text-align:center;font-size:1.1rem;">
+      <li>⚡ Pan-India reach with focus on Tier 2/3</li>
+      <li>⚡ Founder-friendly and equity smart</li>
+      <li>⚡ Build, invest, or acquire fully-formed startups</li>
+      <li>⚡ Inspired by YC but built for India</li>
+    </ul>
+  </section>
+
+  <!-- Call To Action -->
+  <section id="apply" style="text-align:center;">
+    <h2>Ready to Start?</h2>
+    <p>Join India’s House of Startups. Apply now and be part of the ecosystem.</p>
+    <a href="#" class="btn">Join the Ecosystem</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Antera Fusion. All Rights Reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a>
+    </p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    // Dark/Light Toggle
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+
+    // Scroll Animations
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
